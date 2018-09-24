@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head></head>
+
+<body>
+    <p ng-controller="ctrl1 as c1">
+        <button ng-click="c1.addOne()">+1</button><br/>
+        After addOne {{c1.currentValue}}
+    </p>
+    <p ng-controller="ctrl2 as c2">
+        <button ng-click="c2.addTwo()">+2</button><br/>
+        After addTwo {{c2.currentValue}}
+    </p>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="example/example3.js"></script>
+</body>
+
+</html>

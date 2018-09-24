@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head></head>
+
+<body>
+    <div ng-controller="ctrl1 as c1">
+        <div>
+            <label>Name:</label>
+            <input type="text" ng-model="c1.yourName" placeholder="Enter a name here">
+            <h1>{{c1.greeting}} {{c1.yourName}}!</h1>
+            <div ng-controller="ctrl2 as c2">
+                <h1>{{c2.greeting}} {{c2.yourName}}!</h1>
+                <button ng-click="c2.yourName = c1.yourName">Update Controller 2</button>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="example/example2.js"></script>
+</body>
+
+</html>
