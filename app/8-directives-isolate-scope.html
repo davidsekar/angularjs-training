@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" ng-controller="ctrl1 as ctrl">
+            <div class="col-sm-12">
+                <strong ng-bind="ctrl.title2"></strong>
+            </div>
+            <div class="col-sm-12" ng-repeat="friend in ctrl.friends">
+                <name-card info="friend" num="{{$index}}"></name-card>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="example/example8.js"></script>
+</body>
+
+</html>

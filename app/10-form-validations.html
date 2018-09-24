@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myapp">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        <style>
+        .ng-invalid{border: 1px solid red;}
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" ng-controller="ctrl1 as ctrl">
+            <form name="frm">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        {{ctrl.url}}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"> a : </label><input required ng-min="5" ng-max="10" class="form-control" type="number"
+                            ng-model="ctrl.a">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"> b : </label><input required type="number" class="form-control" ng-model="ctrl.b">
+                    </div>
+                    <div class="form-group">
+                            <label class="form-label"> Password : </label><input required type="text" name="pass" class="form-control" ng-model="ctrl.pass">
+                            <label class="form-label"> Confirm Password : </label><input type="text" name="confirmpass" required class="form-control" ng-model="ctrl.confirmpass" ng-pattern="ctrl.pass">
+                            <span data-ng-show="frm.confirmpass.$error.pattern">Emails have to match!</span>
+                        </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" ng-disabled="!frm.$valid" ng-click="ctrl.save()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="example/example10.js"></script>
+</body>
+
+</html>

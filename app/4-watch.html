@@ -1,20 +1,25 @@
 <!doctype html>
 <html ng-app="myapp">
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
 
 <body>
-    <p ng-controller="ctrl1 as c1">
-        <button ng-click="c1.addOne()">+1</button><br/>
-        After addOne {{c1.currentValue}}
-    </p>
-    <p ng-controller="ctrl2 as c2">
-        <button ng-click="c2.addTwo()">+2</button><br/>
-        After addTwo {{c2.currentValue}}
-        <br/>
-        <br/>
-        <span>Current $rootScope.result = {{c2.result}}</span>
-    </p>
+    <div class="container">
+        <p ng-controller="ctrl1 as c1">
+            <button ng-click="c1.addOne()">+1</button><br />
+            After addOne {{c1.currentValue}}
+        </p>
+        <p ng-controller="ctrl2 as c2">
+            <button ng-click="c2.addTwo()">+2</button><br />
+            After addTwo {{c2.currentValue}}
+            <br />
+            <br />
+            <span>Current $rootScope.result = {{c2.result}}</span>
+        </p>
+    </div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="example/example4.js"></script>
 </body>

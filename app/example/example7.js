@@ -2,6 +2,11 @@ var app = angular.module("myapp", ['ngAnimate']);
 
 app.controller('ctrl1', function ($scope) {
     var vm = this;
+    vm.title1 = 'Attribute Directives';
+    vm.title2 = 'Element Directives';
+    vm.title3 = 'ClassName Directives';
+    vm.title4 = 'Comment Directives';
+
     vm.friends = [
         {name:'John', age:25, gender:'boy'},
         {name:'Jessie', age:30, gender:'girl'},
@@ -15,3 +20,15 @@ app.controller('ctrl1', function ($scope) {
         {name:'Samantha', age:60, gender:'girl'}
       ];  
 });
+
+app.directive('nameCard', function() {
+    return {
+        restrict: 'AECM',
+        replace: true,
+        template: '<section><div><em>Name :</em> {{friend.name}}</div>'+
+        '<div><em>Age :</em> {{friend.age}}</div>' +
+        '<div><em>Gender :</em> {{friend.gender}}</div>' +
+        '<hr /></section>',
+        // templateUrl:'example1.html'
+    };
+  });
